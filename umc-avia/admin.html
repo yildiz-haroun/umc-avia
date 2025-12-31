@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tableau de bord administrateur UMC-AVIA - Gestion des candidatures">
+    <title data-page-title="admin.title">Tableau de Bord - UMC-AVIA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+    
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="images/umc-avia-logo.png" alt="UMC-AVIA – École d'aviation" class="logo-image">
+                <span class="logo-text">UMC-AVIA</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" data-translate="nav.home">Accueil</a></li>
+                <li><a href="school.html" data-translate="nav.school">L'École</a></li>
+                <li><a href="programs.html" data-translate="nav.programs">Programmes</a></li>
+                <li><a href="admissions.html" data-translate="nav.admissions">Admissions</a></li>
+                <li><a href="contact.html" data-translate="nav.contact">Contact</a></li>
+                <li><a href="apply.html" class="cta-button" data-translate="nav.apply">Candidater</a></li>
+                <li>
+                    <div class="lang-switcher">
+                        <button class="lang-btn active" data-lang="fr">FR</button>
+                        <button class="lang-btn" data-lang="en">EN</button>
+                    </div>
+                </li>
+            </ul>
+            <button class="mobile-menu-toggle" aria-label="Menu">☰</button>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <div class="admin-header">
+            <div class="container">
+                <h1 data-translate="admin.h1">Tableau de Bord Administrateur</h1>
+            </div>
+        </div>
+
+        <section class="section">
+            <div class="container">
+                <!-- Statistiques -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="number" id="statTotal">0</div>
+                        <div class="label" data-translate="admin.stats.total">Total Candidatures</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number" id="statPending">0</div>
+                        <div class="label" data-translate="admin.stats.pending">En Attente</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number" id="statApproved">0</div>
+                        <div class="label" data-translate="admin.stats.approved">Approuvées</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number" id="statRejected">0</div>
+                        <div class="label" data-translate="admin.stats.rejected">Refusées</div>
+                    </div>
+                </div>
+
+                <!-- Tableau des candidatures -->
+                <div class="table-container" style="margin-top: 2rem;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th data-translate="admin.table.name">Nom</th>
+                                <th data-translate="admin.table.firstName">Prénom</th>
+                                <th data-translate="admin.table.email">Email</th>
+                                <th data-translate="admin.table.program">Formation</th>
+                                <th data-translate="admin.table.date">Date</th>
+                                <th data-translate="admin.table.status">Statut</th>
+                                <th data-translate="admin.table.actions">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="applicationsTableBody">
+                            <!-- Les candidatures seront chargées dynamiquement -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>UMC-AVIA</h3>
+                <p>École de Management d'Excellence</p>
+                <p>Formant les leaders de demain depuis 2000</p>
+            </div>
+            <div class="footer-section">
+                <h3>Liens Rapides</h3>
+                <a href="index.html">Accueil</a>
+                <a href="school.html">L'École</a>
+                <a href="programs.html">Programmes</a>
+                <a href="admissions.html">Admissions</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>123 Avenue de l'Éducation</p>
+                <p>75001 Paris, France</p>
+                <p>Email: contact@umc-avia.com</p>
+                <p>Téléphone: +33 1 23 45 67 89</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 UMC-AVIA. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+    <script src="pdf.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>
+

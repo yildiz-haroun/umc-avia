@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contactez UMC-AVIA. Notre équipe est à votre disposition pour répondre à toutes vos questions sur nos programmes et admissions.">
+    <title data-page-title="contact.title">Contact - UMC-AVIA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+    
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="images/umc-avia-logo.png" alt="UMC-AVIA – École d'aviation" class="logo-image">
+                <span class="logo-text">UMC-AVIA</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" data-translate="nav.home">Accueil</a></li>
+                <li><a href="school.html" data-translate="nav.school">L'École</a></li>
+                <li><a href="programs.html" data-translate="nav.programs">Programmes</a></li>
+                <li><a href="admissions.html" data-translate="nav.admissions">Admissions</a></li>
+                <li><a href="contact.html" data-translate="nav.contact">Contact</a></li>
+                <li><a href="apply.html" class="cta-button" data-translate="nav.apply">Candidater</a></li>
+                <li>
+                    <div class="lang-switcher">
+                        <button class="lang-btn active" data-lang="fr">FR</button>
+                        <button class="lang-btn" data-lang="en">EN</button>
+                    </div>
+                </li>
+            </ul>
+            <button class="mobile-menu-toggle" aria-label="Menu">☰</button>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section class="hero">
+            <div class="container">
+                <h1 data-translate="contact.h1">Contactez-nous</h1>
+                <p data-translate="contact.subtitle">Notre équipe est à votre disposition pour répondre à toutes vos questions</p>
+                <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1920&q=80" alt="Contact UMC-AVIA" class="hero-image">
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+                    <div class="card">
+                        <div class="card-icon">📍</div>
+                        <h3 data-translate="contact.addressTitle">Adresse</h3>
+                        <p style="white-space: pre-line;">123 Avenue de l'Éducation
+75001 Paris, France</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">📞</div>
+                        <h3 data-translate="contact.phoneTitle">Téléphone</h3>
+                        <p>+33 1 23 45 67 89</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">✉️</div>
+                        <h3 data-translate="contact.emailTitle">Email</h3>
+                        <p>contact@umc-avia.com</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">🕒</div>
+                        <h3 data-translate="contact.hoursTitle">Horaires</h3>
+                        <p style="white-space: pre-line;">Lundi - Vendredi: 9h00 - 18h00
+Samedi: 9h00 - 13h00</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="background-color: var(--bg-light);">
+            <div class="container">
+                <div class="form-container">
+                    <h2 data-translate="contact.formTitle">Envoyez-nous un message</h2>
+                    <form id="contactForm" onsubmit="handleContactForm(event)">
+                        <div class="form-group">
+                            <label for="contactName" data-translate="contact.formName">Nom</label>
+                            <input type="text" id="contactName" name="name" required>
+                            <span class="error-message"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactEmail" data-translate="contact.formEmail">Email</label>
+                            <input type="email" id="contactEmail" name="email" required>
+                            <span class="error-message"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactSubject" data-translate="contact.formSubject">Sujet</label>
+                            <input type="text" id="contactSubject" name="subject" required>
+                            <span class="error-message"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactMessage" data-translate="contact.formMessage">Message</label>
+                            <textarea id="contactMessage" name="message" required></textarea>
+                            <span class="error-message"></span>
+                        </div>
+                        <button type="submit" class="btn btn-primary" data-translate="contact.formSend">Envoyer le message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>UMC-AVIA</h3>
+                <p>École de Management d'Excellence</p>
+                <p>Formant les leaders de demain depuis 2000</p>
+            </div>
+            <div class="footer-section">
+                <h3>Liens Rapides</h3>
+                <a href="index.html">Accueil</a>
+                <a href="school.html">L'École</a>
+                <a href="programs.html">Programmes</a>
+                <a href="admissions.html">Admissions</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>123 Avenue de l'Éducation</p>
+                <p>75001 Paris, France</p>
+                <p>Email: contact@umc-avia.com</p>
+                <p>Téléphone: +33 1 23 45 67 89</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 UMC-AVIA. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+    <script>
+        function handleContactForm(event) {
+            event.preventDefault();
+            if (validateForm('contactForm')) {
+                // Simuler l'envoi (sera remplacé par un appel backend)
+                showAlert('Votre message a été envoyé avec succès ! Nous vous répondrons dans les plus brefs délais.', 'success');
+                document.getElementById('contactForm').reset();
+            }
+        }
+    </script>
+</body>
+</html>
+

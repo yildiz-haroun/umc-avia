@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Candidature en ligne UMC-AVIA. Remplissez le formulaire de candidature pour postuler à l'un de nos programmes de formation.">
+    <title data-page-title="apply.title">Candidature en ligne - UMC-AVIA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+    
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="images/umc-avia-logo.png" alt="UMC-AVIA – École d'aviation" class="logo-image">
+                <span class="logo-text">UMC-AVIA</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" data-translate="nav.home">Accueil</a></li>
+                <li><a href="school.html" data-translate="nav.school">L'École</a></li>
+                <li><a href="programs.html" data-translate="nav.programs">Programmes</a></li>
+                <li><a href="admissions.html" data-translate="nav.admissions">Admissions</a></li>
+                <li><a href="contact.html" data-translate="nav.contact">Contact</a></li>
+                <li><a href="apply.html" class="cta-button" data-translate="nav.apply">Candidater</a></li>
+                <li>
+                    <div class="lang-switcher">
+                        <button class="lang-btn active" data-lang="fr">FR</button>
+                        <button class="lang-btn" data-lang="en">EN</button>
+                    </div>
+                </li>
+            </ul>
+            <button class="mobile-menu-toggle" aria-label="Menu">☰</button>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section class="hero">
+            <div class="container">
+                <h1 data-translate="apply.h1">Formulaire de Candidature</h1>
+                <p data-translate="apply.subtitle">Remplissez le formulaire ci-dessous pour postuler à l'un de nos programmes</p>
+                <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1920&q=80" alt="Candidature UMC-AVIA" class="hero-image">
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="form-container">
+                    <form id="applicationForm" onsubmit="handleApplicationForm(event)">
+                        <!-- Informations personnelles -->
+                        <h2 style="margin-bottom: 1.5rem; color: var(--primary-color);">Informations Personnelles</h2>
+                        
+                        <div class="form-group">
+                            <label for="firstName" data-translate="apply.form.firstName">Prénom</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                            <span class="error-message"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lastName" data-translate="apply.form.lastName">Nom</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                            <span class="error-message"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" data-translate="apply.form.email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                            <span class="error-message"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone" data-translate="apply.form.phone">Téléphone</label>
+                            <input type="tel" id="phone" name="phone" required>
+                            <span class="error-message"></span>
+                        </div>
+
+                        <!-- Formation -->
+                        <h2 style="margin: 2rem 0 1.5rem; color: var(--primary-color);">Formation</h2>
+                        
+                        <div class="form-group">
+                            <label for="program" data-translate="apply.form.program">Formation choisie</label>
+                            <select id="program" name="program" required>
+                                <option value="" data-translate="apply.form.selectProgram">Sélectionnez une formation</option>
+                                <option value="Bachelor en Management">Bachelor en Management</option>
+                                <option value="Master en Management">Master en Management</option>
+                                <option value="Executive Education">Executive Education</option>
+                                <option value="Formation Continue">Formation Continue</option>
+                            </select>
+                            <span class="error-message"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="level" data-translate="apply.form.level">Niveau d'études</label>
+                            <select id="level" name="level" required>
+                                <option value="" data-translate="apply.form.selectLevel">Sélectionnez votre niveau</option>
+                                <option value="Baccalauréat">Baccalauréat</option>
+                                <option value="Bac+2">Bac+2 (DUT, BTS, etc.)</option>
+                                <option value="Bac+3">Bac+3 (Licence, Bachelor)</option>
+                                <option value="Bac+4">Bac+4</option>
+                                <option value="Bac+5">Bac+5 (Master)</option>
+                                <option value="Autre">Autre</option>
+                            </select>
+                            <span class="error-message"></span>
+                        </div>
+
+                        <!-- Message de motivation -->
+                        <div class="form-group">
+                            <label for="message" data-translate="apply.form.message">Message de motivation</label>
+                            <textarea id="message" name="message" rows="6"></textarea>
+                            <span class="error-message"></span>
+                        </div>
+
+                        <!-- Upload CV -->
+                        <div class="form-group">
+                            <label for="cv" data-translate="apply.form.cv">CV (PDF uniquement)</label>
+                            <div class="file-upload">
+                                <input type="file" id="cv" name="cv" accept=".pdf" required>
+                                <label for="cv" class="file-upload-label">
+                                    <span data-translate="apply.form.uploadCv">Télécharger votre CV</span>
+                                    <span id="fileName" style="display: block; margin-top: 0.5rem; color: var(--text-light); font-size: 0.875rem;"></span>
+                                </label>
+                            </div>
+                            <span class="error-message"></span>
+                        </div>
+
+                        <!-- Bouton de soumission -->
+                        <div style="margin-top: 2rem;">
+                            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem;" data-translate="apply.form.submit">Soumettre la candidature</button>
+                        </div>
+                    </form>
+
+                    <!-- Zone de succès (cachée par défaut) -->
+                    <div id="successMessage" style="display: none; margin-top: 2rem; text-align: center;">
+                        <div class="alert alert-success">
+                            <h3 data-translate="apply.form.success">Votre candidature a été envoyée avec succès !</h3>
+                            <p data-translate="apply.form.successMessage">Un email de confirmation a été envoyé à votre adresse. Vous pouvez télécharger votre dossier PDF ci-dessous.</p>
+                        </div>
+                        <button id="downloadPdfBtn" class="btn btn-success" style="margin-top: 1rem;" data-translate="apply.form.downloadPdf">Télécharger mon dossier PDF</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>UMC-AVIA</h3>
+                <p>École de Management d'Excellence</p>
+                <p>Formant les leaders de demain depuis 2000</p>
+            </div>
+            <div class="footer-section">
+                <h3>Liens Rapides</h3>
+                <a href="index.html">Accueil</a>
+                <a href="school.html">L'École</a>
+                <a href="programs.html">Programmes</a>
+                <a href="admissions.html">Admissions</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>123 Avenue de l'Éducation</p>
+                <p>75001 Paris, France</p>
+                <p>Email: contact@umc-avia.com</p>
+                <p>Téléphone: +33 1 23 45 67 89</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 UMC-AVIA. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+    <script src="pdf.js"></script>
+    <script>
+        let applicationData = null;
+
+        // Gestion de l'affichage du nom de fichier
+        document.getElementById('cv').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            const fileName = document.getElementById('fileName');
+            if (file) {
+                fileName.textContent = file.name;
+                
+                // Validation du fichier
+                const validation = validatePDFFile(file);
+                if (!validation.valid) {
+                    const formGroup = this.closest('.form-group');
+                    formGroup.classList.add('error');
+                    const errorMsg = formGroup.querySelector('.error-message');
+                    if (errorMsg) {
+                        errorMsg.textContent = validation.error;
+                    }
+                    this.value = '';
+                    fileName.textContent = '';
+                } else {
+                    const formGroup = this.closest('.form-group');
+                    formGroup.classList.remove('error');
+                }
+            } else {
+                fileName.textContent = '';
+            }
+        });
+
+        // Gestion de la soumission du formulaire
+        function handleApplicationForm(event) {
+            event.preventDefault();
+            
+            // Validation du formulaire
+            if (!validateForm('applicationForm')) {
+                return;
+            }
+
+            // Validation du fichier CV
+            const cvInput = document.getElementById('cv');
+            if (cvInput.files.length === 0) {
+                const formGroup = cvInput.closest('.form-group');
+                formGroup.classList.add('error');
+                const errorMsg = formGroup.querySelector('.error-message');
+                if (errorMsg) {
+                    errorMsg.textContent = t('apply.validation.required');
+                }
+                return;
+            }
+
+            const fileValidation = validatePDFFile(cvInput.files[0]);
+            if (!fileValidation.valid) {
+                const formGroup = cvInput.closest('.form-group');
+                formGroup.classList.add('error');
+                const errorMsg = formGroup.querySelector('.error-message');
+                if (errorMsg) {
+                    errorMsg.textContent = fileValidation.error;
+                }
+                return;
+            }
+
+            // Récupération des données du formulaire
+            const formData = {
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                program: document.getElementById('program').value,
+                level: document.getElementById('level').value,
+                message: document.getElementById('message').value,
+                applicationNumber: generateApplicationNumber(),
+                date: formatDate(new Date())
+            };
+
+            applicationData = formData;
+
+            // Sauvegarder la candidature dans le localStorage (pour le tableau admin)
+            const existingApps = JSON.parse(localStorage.getItem('umc-avia-applications') || '[]');
+            const newApp = {
+                id: existingApps.length > 0 ? Math.max(...existingApps.map(a => a.id)) + 1 : 1,
+                firstName: formData.firstName,
+                lastName: formData.lastName,
+                email: formData.email,
+                phone: formData.phone,
+                program: formData.program,
+                level: formData.level,
+                message: formData.message,
+                date: new Date().toISOString().split('T')[0],
+                status: 'pending',
+                applicationNumber: formData.applicationNumber
+            };
+            existingApps.push(newApp);
+            localStorage.setItem('umc-avia-applications', JSON.stringify(existingApps));
+
+            // Simuler l'envoi (sera remplacé par un appel backend)
+            // Ici, on simule l'envoi d'email
+            console.log('Simulation envoi email candidat:', formData.email);
+            console.log('Simulation envoi email admin: admin@umc-avia.com');
+
+            // Afficher le message de succès
+            document.getElementById('applicationForm').style.display = 'none';
+            document.getElementById('successMessage').style.display = 'block';
+
+            // Scroll vers le message de succès
+            document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Gestion du téléchargement du PDF
+        document.getElementById('downloadPdfBtn').addEventListener('click', function() {
+            if (applicationData) {
+                downloadApplicationPDF(applicationData);
+            }
+        });
+    </script>
+</body>
+</html>
+
